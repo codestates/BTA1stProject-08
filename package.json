@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && npm run copy",
     "lint": "vue-cli-service lint",
-    "copy": "cp src/manifest.json dist && cp src/background.js dist && cp src/assets/icon48.png dist/img"
+    "copy": "cpx src/manifest.json dist && cpx src/background.js dist && cpx src/assets/icon48.png dist/img"
   },
   "dependencies": {
     "axios": "^1.1.2",
@@ -24,6 +24,7 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "cpx": "^1.5.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "sass": "~1.32.0",
