@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     {{ a }}
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="onFlow" src="../assets/onFlow.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
