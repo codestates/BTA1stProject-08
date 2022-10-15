@@ -1,6 +1,10 @@
 export default {
-    mnemonic: state => state.mnemonic,
     pwd: state => state.pwd,
+
+    mnemonic: state => state.mnemonic,
     mnemonicChk: state => state.mnemonicChk,
-    walletAdd: state => state.walletAdd
+    entropy: state => state.entropy,
+
+    wallet: state => state.wallet,
+    address: state => state.address
 }
