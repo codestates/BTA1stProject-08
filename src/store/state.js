@@ -1,6 +1,10 @@
 export default {
-    mnemonic: "",
     pwd: "",
+
+    mnemonic: "",
     mnemonicChk: "",
-    walletAdd: ""
+    entropy: "",
+
+    wallet: "",
+    address: "",
 }

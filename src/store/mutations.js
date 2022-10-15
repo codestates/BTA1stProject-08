@@ -9,6 +9,12 @@ export default {
         state.pwd = val;
     },
     SET_WALLET(state, val){
-        state.walletAdd = val;
+        state.wallet = val;
+    },
+    SET_ADDR(state, val){
+        state.address = val;
+    },
+    SET_ENTROPY(state, val){
+        state.entropy  = val;
     }
 }

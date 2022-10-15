@@ -22,13 +22,6 @@
 import { mapGetters } from 'vuex';
 
 // import { BIP39 } from "@ardenthq/sdk-cryptography";
-import {Profile} from "@ardenthq/sdk-profiles";
-// import {IProfile} from "@ardenthq/sdk-profiles";
-// import {IProfileInput} from "@ardenthq/sdk-profiles/distribution/esm/profile.contract";
-
-import { ARK } from "@ardenthq/sdk-ark";
-import { Environment } from "@ardenthq/sdk-profiles";
-import {HttpClient} from "js-httpclient";
 
 
 export default {

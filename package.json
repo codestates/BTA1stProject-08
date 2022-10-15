@@ -10,16 +10,22 @@
   "dependencies": {
     "@ardenthq/sdk-ark": "^1.2.5",
     "@ardenthq/sdk-cryptography": "^1.2.5",
+    "@ardenthq/sdk-fetch": "^1.2.5",
     "@ardenthq/sdk-profiles": "^1.2.5",
+    "@ardenthq/sdk-test": "^1.2.5",
     "@onflow/fcl": "^1.3.1",
     "axios": "^1.1.2",
+    "bs58check": "^2.1.2",
     "core-js": "^3.8.3",
     "js-httpclient": "^0.0.3",
+    "secp256k1": "^4.0.3",
+    "simple-sha256": "1.0.0",
     "vue": "^2.6.14",
     "vue-router": "3.6.5",
     "vuetify": "^2.6.0",
     "vuex": "3.6.2",
-    "vuex-persistedstate": "3.2.1"
+    "vuex-persistedstate": "3.2.1",
+    "wif": "^2.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

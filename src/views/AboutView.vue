@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>on Flow가 처음이세요?</h1>
+    <h1>LostArk가 처음이세요?</h1>
 
     <div class="box_left">
       <h3>아니요, 비밀 복구 구문이 있습니다.</h3>

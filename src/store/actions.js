@@ -10,5 +10,11 @@ export default {
     },
     async SET_WALLET({ commit }, payload) {
         commit('SET_WALLET', payload);
+    },
+    async SET_ADDR({ commit }, payload) {
+        commit('SET_ADDR', payload);
+    },
+    async SET_ENTROPY({ commit }, payload) {
+        commit('SET_ENTROPY', payload);
     }
 }

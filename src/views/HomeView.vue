@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-<!--    {{ a }}-->
     <img alt="onFlow" src="../assets/onFlow.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -9,15 +8,12 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-// import { mapGetters } from 'vuex';
-// import * as fcl from "@onflow/fcl";
 export default {
   name: 'HomeView',
   components: {
     HelloWorld
   },
   computed: {
-    // ...mapGetters(['a'])
   },
   created() {
     // fcl.config()
@@ -34,8 +30,6 @@ export default {
     //
     // fcl.authenticate();
 
-    // this.$store.commit('SET_A', this.a+1);
-    // console.log(23, this.a);
   }
 }
 </script>
