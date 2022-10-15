@@ -24,14 +24,32 @@ import { mapGetters } from 'vuex';
 // import { BIP39 } from "@ardenthq/sdk-cryptography";
 
 
-
 export default {
   name: "MnemonicView",
   computed: {
     ...mapGetters(['mnemonic'])
   },
   created() {
-
+    const env = new Environment({ coins: { ARK }, httpClient: new HttpClient(), storage: "localstorage" });
+    console.log(env.profiles().all())
+    let profile = new Profile({
+      id: 'test',
+      name: 'test',
+      avatar: '',
+      password: '',
+      data: 'test',
+      appearance: {
+        accentColor: '',
+        dashboardTransactionHistory: '',
+        theme: '',
+        useExpandedTables: '',
+        useNetworkWalletNames: '',
+      },
+    });
+    console.log(profile)
+    console.log(this.mnemonic)
+    // console.log(Profile.id())
+    console.log(profile.walletFactory().fromMnemonicWithBIP39(this.mnemonic))
   },
 
   data: () => ({
