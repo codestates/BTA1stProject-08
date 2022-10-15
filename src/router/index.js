@@ -33,6 +33,25 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/MnemonicView.vue')
+  },
+  {
+    path: '/mnemonicChk',
+    name: 'mnemonicChk',
+    props: true,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/MnemonicChkView.vue')
+  }
+  ,
+  {
+    path: '/createAccount',
+    name: 'createAccount',
+    props: true,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/CreateAccountView.vue')
   }
 ]
 
