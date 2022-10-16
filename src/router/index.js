@@ -4,12 +4,6 @@ import store from '../store';
 import SplashScreenView from "@/views/SplashScreenView";
 Vue.use(VueRouter)
 
-function beforeRouteEnter(to, from, next) {
-  next(() => {
-    // access to component instance via `vm`
-  })
-}
-
 const routes = [
   {
     path: '/',
@@ -106,12 +100,6 @@ const router = new VueRouter({
     }
   })
 })
-
-router.beforeEach((to, from, next) => {
-  console.log(68, store);
-
-  next();
-});
 
 router.afterEach((to) => {
   store.commit('SET_LAST_ROUTE_PATH', to.path);

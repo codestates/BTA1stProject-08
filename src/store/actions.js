@@ -8,6 +8,9 @@ export default {
     async SET_PWD({ commit }, payload) {
         commit('SET_PWD', payload);
     },
+    async CHK_PWD({ commit }, payload) {
+        commit('CHK_PWD', payload);
+    },
     async CHK_Mnemonic({ commit }, payload) {
         commit('CHK_Mnemonic', payload);
     },

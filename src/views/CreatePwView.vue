@@ -30,14 +30,13 @@ export default {
     },
     onSubmitForm : function (e){
       e.preventDefault();
-      if(this.pwd != this.pwdChk){
+      if(this.pwd !== this.pwdChk){
         alert("비밀번호가 일치하지 않습니다.")
       }else{
         this.$store.commit('SET_PWD', this.pwd)
 
         return this.$router.push({
           name: 'newMnemonic',
-          params: {pwd: this.pwd}
         })
       }
     },

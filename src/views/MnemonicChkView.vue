@@ -13,6 +13,7 @@ export default {
   name: "MnemonicChkView",
   methods: {
     validateMnemonic: function (){
+
       this.$store.commit('CHK_Mnemonic', BIP39.validate(this.mnemonicChk))
       if(BIP39.validate(this.mnemonicChk) == false){
         alert("비밀 복구 구문이 잘못되었습니다.")
