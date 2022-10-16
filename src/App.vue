@@ -43,7 +43,7 @@
   text-align: center;
   color: #2c3e50;
   min-width: 400px;
-  min-height: 800px;
+  height: 800px;
 }
 
 nav {
