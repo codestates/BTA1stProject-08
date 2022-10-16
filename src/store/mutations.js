@@ -16,5 +16,8 @@ export default {
     },
     SET_ENTROPY(state, val){
         state.entropy  = val;
+    },
+    SET_PUBLIC(state, val){
+        state.publicKey  = val;
     }
 }
