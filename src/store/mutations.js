@@ -19,5 +19,18 @@ export default {
     },
     SET_PUBLIC(state, val){
         state.publicKey  = val;
+    },
+
+    SET_ENCRYPTED_WALLET_DATA(state, val) {
+        state.encryptedWalletData = val;
+    },
+    SET_WALLET_DATA(state, val) {
+        state.walletData = val;
+    },
+    SET_LAST_ROUTE_PATH(state, val) {
+        state.lastRoutePath = val;
+    },
+    SET_SNACKBAR_PROPS(state, snackbarProps) {
+        state.snackbarProps = snackbarProps;
     }
 }

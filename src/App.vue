@@ -1,9 +1,9 @@
 <template>
   <v-app id="app">
-    <nav>
-
-    </nav>
     <router-view/>
+    <v-snackbar v-model="showSnackbar" top>
+      {{ snackbarProps.text }}
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -61,9 +61,33 @@ nav {
 </style>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
   created() {
-    // console.log(this.$router, this.$route);
+    // window.addEventListener('blur', async () => {
+    //   // 브라우저 탭 포커스가 사라지면 잠금 처리
+    //   if(['/seed-phrase', '/seed-phrase-confirm'].indexOf(this.$route.path) === -1) {
+    //     await this.$store.dispatch('lockWallet');
+    //   }
+    //
+    //
+    //   // 잠금 페이지로 이동이 필요하지 않은 페이지 설정
+    //   if(['/unlock', '/welcome', '/', '/select-action', '/import-with-seed-phrase', '/seed-phrase-confirm', '/create-password', '/seed-phrase'].indexOf(this.$route.path) === -1) {
+    //     await this.$router.push('/unlock?redirect=' + this.lastRoutePath);
+    //   }
+    // });
+  },
+  computed: {
+    ...mapGetters(['snackbarProps', 'lastRoutePath']),
+    showSnackbar: {
+      set(val) {
+        this.$store.commit('SET_SNACKBAR_PROPS', { show: val });
+      },
+      get() {
+        return this.$store.getters.snackbarProps?.show || false;
+      }
+    }
   },
   watch: {
     $route(a, b) {

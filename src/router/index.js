@@ -1,46 +1,41 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import store from '../store';
+import SplashScreenView from "@/views/SplashScreenView";
 Vue.use(VueRouter)
+
+function beforeRouteEnter(to, from, next) {
+  next(() => {
+    // access to component instance via `vm`
+  })
+}
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'splash-screen',
+    component: SplashScreenView
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
     path: '/createPw',
     name: 'createPw',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "createPw" */ '../views/CreatePwView.vue')
   },
   {
     path: '/newMnemonic',
     name: 'newMnemonic',
     props: true,
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/MnemonicView.vue')
   },
   {
     path: '/mnemonicChk',
     name: 'mnemonicChk',
     props: true,
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/MnemonicChkView.vue')
   }
   ,
@@ -48,18 +43,78 @@ const routes = [
     path: '/createAccount',
     name: 'createAccount',
     props: true,
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/CreateAccountView.vue')
-  }
+  },
+  {
+    path: '/welcome',
+    name: 'welcome',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/WelcomeView.vue'),
+  },
+  {
+    path: '/select-action',
+    name: 'select-action',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/SelectActionView.vue'),
+  },
+  {
+    path: '/create-password',
+    name: 'create-password',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/CreatePassword.vue'),
+  },
+  {
+    path: '/seed-phrase',
+    name: 'seed-phrase',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/SeedPhraseView.vue'),
+  },
+  {
+    path: '/seed-phrase-confirm',
+    name: 'seed-phrase-confirm',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/SeedPhraseConfirmView.vue'),
+  },
+  {
+    path: '/import-with-seed-phrase',
+    name: 'import-with-seed-phrase',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/ImportWithSeedPhraseView.vue'),
+  },
+  {
+    path: '/unlock',
+    name: 'unlock',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/UnlockView.vue'),
+  },
+  {
+    path: '/home',
+    name: 'home',
+    props: true,
+    component: () => import(/* webpackChunkName: "newMnemonic" */ '../views/Home2View.vue'),
+  },
 ]
 
 const router = new VueRouter({
   // mode: 'history',
   // base: process.env.BASE_URL,
   // history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes: routes.map(route => {
+    return {
+      ...route,
+      beforeRouteEnter,
+    }
+  })
 })
+
+router.beforeEach((to, from, next) => {
+  console.log(68, store);
+
+  next();
+});
+
+router.afterEach((to) => {
+  store.commit('SET_LAST_ROUTE_PATH', to.path);
+});
 
 export default router
