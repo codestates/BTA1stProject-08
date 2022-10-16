@@ -5,6 +5,8 @@ export default {
     mnemonicChk: "",
     entropy: "",
 
+    publicKey: "",
+
     wallet: "",
     address: "",
 }

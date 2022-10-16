@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {BIP39} from "@ardenthq/sdk-cryptography";
+import { BIP39, Hash } from "@ardenthq/sdk-cryptography";
 
 export default {
   name: "MnemonicChkView",
@@ -17,9 +17,17 @@ export default {
       if(BIP39.validate(this.mnemonicChk) == false){
         alert("비밀 복구 구문이 잘못되었습니다.")
       }else{
+        const privateKey = Hash.sha256(BIP39.toEntropy(this.mnemonicChk))
+
+        const publicKey = Hash.ripemd160(Hash.sha256(privateKey)).toString("hex")
+        this.$store.commit('SET_PUBLIC', publicKey)
+
+        const address = Hash.ripemd160(Hash.sha256(publicKey)).toString("hex")
+        this.$store.commit('SET_ADDR', address)
+
         return this.$router.push({
           name: 'createAccount',
-          params: {mnemonicChk: this.mnemonicChk}
+          params: {mnemonicChk: this.mnemonicChk, publicKey: this.$store.getters.publicKey, address: this.$store.getters.address}
         })
       }
     },

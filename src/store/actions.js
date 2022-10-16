@@ -16,5 +16,8 @@ export default {
     },
     async SET_ENTROPY({ commit }, payload) {
         commit('SET_ENTROPY', payload);
+    },
+    async SET_PUBLIC({ commit }, payload) {
+        commit('SET_PUBLIC', payload);
     }
 }
