@@ -35,5 +35,8 @@ export default {
     },
     SET_SNACKBAR_PROPS(state, snackbarProps) {
         state.snackbarProps = snackbarProps;
+    },
+    SET_AMOUNT(state, val) {
+        state.amount = val;
     }
 }

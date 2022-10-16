@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="px-8">
   <img src="@/assets/img/logo.svg" alt="" width="125" height="125" class="mt-12 mb-8">
   <h2>
     Ark Wallet 방문을 환영합니다.

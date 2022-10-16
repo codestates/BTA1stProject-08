@@ -44,6 +44,7 @@
   color: #2c3e50;
   min-width: 400px;
   height: 800px;
+  word-break: keep-all;
 }
 
 nav {

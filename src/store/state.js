@@ -17,5 +17,6 @@ export default {
     lastRoutePath: '/',
     snackbarProps: {
         show: false,
-    }
+    },
+    amount: 20000,
 }
