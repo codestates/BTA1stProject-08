@@ -96,7 +96,6 @@ const router = new VueRouter({
   routes: routes.map(route => {
     return {
       ...route,
-      beforeRouteEnter,
     }
   })
 })
