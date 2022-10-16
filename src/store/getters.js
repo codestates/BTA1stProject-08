@@ -1,5 +1,6 @@
 export default {
     pwd: state => state.pwd,
+    loginPwd: state => state.loginPwd,
 
     mnemonic: state => state.mnemonic,
     mnemonicChk: state => state.mnemonicChk,

@@ -5,7 +5,7 @@
     <div class="box_left">
       <h3>아니요, 비밀 복구 구문이 있습니다.</h3>
       <h5>비밀 복구 구문을 사용하여 기존 지갑 가져오기</h5>
-      <button class="btn-hover color-5">지갑 가져오기</button>
+      <button class="btn-hover color-5"><router-link to="/login" v-bind:style="{color: 'white'}">지갑 가져오기</router-link></button>
     </div>
     <div class="box_right">
       <h3>네, 지갑을 만들어야 합니다.</h3>
